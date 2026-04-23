@@ -40,14 +40,11 @@ class avl_tree{
         }
 
         Node* copy_tree(Node* node){
-
-            Node* new_root = nullptr;
-
             if(node == nullptr){
-                new_root = node;
+                return nullptr;
             }
 
-            new_root = new Node;
+            Node* new_root = new Node;
             new_root -> data = node -> data;
             new_root -> height = node -> height;
 
