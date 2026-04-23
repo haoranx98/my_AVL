@@ -26,3 +26,22 @@ target_compile_options(avl_demo PRIVATE
     $<$<CONFIG:Debug>:-g -O0>
     $<$<CONFIG:Release>:-O3>
 )
+
+# ===================== 测试 =====================
+enable_testing()
+
+add_executable(avl_test
+    tests/test_avl.cpp
+)
+
+target_include_directories(avl_test PRIVATE src)
+
+target_compile_options(avl_test PRIVATE
+    $<$<CONFIG:Debug>:-g -O0>
+    $<$<CONFIG:Release>:-O3>
+)
+
+add_test(
+    NAME avl_unit_test
+    COMMAND avl_test
+)
